@@ -10,6 +10,7 @@ cellspacing="6">
 </td>
 </tr>
 
+<form id="r">
 <tr>
 <td>Name</td>
 <td><input type=text name=textnames id="textname" size="60"></td>
@@ -101,11 +102,33 @@ cellspacing="6">
 </tr>
 
 <tr>
-<td><input type="reset"></td>
-<td colspan="2"><input type="submit" value="Submit Form" /></td>
+<td colspan="2"><button type="reset" class="btn btn-default bt" onclick="myFunction()" value="Reset Form" style="align:centre;">Reset</button></td>
 </tr>
-
-</table>
 </form>
+
+<form id="f">
+<tr>
+<td colspan="2"><button type="submit" class="btn btn-default bt" onclick="my_function()" value="Submit Form" style="align:centre;">Submit Form</button></td>
+</tr>
+</form>
+
 </body>
+</table>
+
+<script>
+var form = document.getElementById('r');
+function myFunction() {
+    document.getElementById("r").reset();
+}
+</script>
+
+<script>
+var form = document.getElementById('f');
+function my_function() {
+  if (form.checkValidity()) {
+    alert("Adding Succesful!");
+    document.getElementById("f").reset();
+  }
+}
+</script>
 </html>
